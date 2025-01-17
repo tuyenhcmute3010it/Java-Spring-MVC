@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
     User save(User mimi);
 
-    List<User> findByEmail(String email);
+    List<User> findOneByEmail(String email);
 
     void deleteById(long id);
 
@@ -18,5 +18,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findAll();
 
     User findById(long id);
+
+    boolean existsByEmail(String email);
+
+    User findByEmail(String email);
+
+    List<User> findAllByEmail(String email);
 
 }
